@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     private var context: Context? = null        //new empty variable to Toast.makeText
@@ -13,6 +14,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) { //
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val exitbutton = findViewById<Button>(R.id.button)
+        exitbutton.setOnClickListener {
+            finish()
+        }
 
         context = applicationContext                              //applicationContext to variable
         Toast.makeText(context, "onCreate", duration).show() //Toast notification
