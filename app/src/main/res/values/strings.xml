@@ -1,3 +1,5 @@
-<resources>
-    <string name="app_name">GS_252912_Lab1</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">GS_252912_Lab1</string>
+    <string name="pierwsza_apka">Pierwsza apka</string>
+    <string name="exit">Exit</string>
 </resources>
