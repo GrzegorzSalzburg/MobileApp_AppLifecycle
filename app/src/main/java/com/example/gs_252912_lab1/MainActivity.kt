@@ -1,68 +1,64 @@
 package com.example.gs_252912_lab1
 
-import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
+
 
 class MainActivity : AppCompatActivity() {
-    private var context: Context? = null        //new empty variable to Toast.makeText
-    private val duration = Toast.LENGTH_SHORT   //duration
 
     /*onCreate*/
     override fun onCreate(savedInstanceState: Bundle?) { //
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val exitbutton = findViewById<Button>(R.id.button)
-        exitbutton.setOnClickListener {
-            finish()
-        }
-
-        context = applicationContext                              //applicationContext to variable
-        Toast.makeText(context, "onCreate", duration).show() //Toast notification
+        Log.d("Lifecycle_MSG","onCreate")
     }
 
     /*onStart*/
     override fun onStart() { //
         super.onStart()
-        Toast.makeText(context, "onStart", duration).show()
+        Log.d("Lifecycle_MSG","onStart")
     }
 
     /*onResume*/
     override fun onResume() {
         super.onResume()
-        Toast.makeText(context,"onResume",duration).show()
-    }
-
-    /*onSaveInstanceState*/
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        Toast.makeText(context,"onSaveInstanceState",duration).show()
+        Log.d("Lifecycle_MSG","onResume")
     }
 
     /* onPause*/
     override fun onPause() {
         super.onPause()
-        Toast.makeText(context,"onPause",duration).show()
+        Log.d("Lifecycle_MSG","onPause")
     }
 
     /*onStop*/
     override fun onStop() { //
         super.onStop()
-        Toast.makeText(context,"onStop",duration).show()
-    }
-
-    /*onDestroy*/
-    override fun onDestroy(){
-        super.onDestroy()
-        Toast.makeText(context, "onDestroy", duration).show()
+        Log.d("Lifecycle_MSG","onStop")
     }
 
     /*onRestart*/
     override fun onRestart() {
         super.onRestart()
-        Toast.makeText(context,"onRestart",duration).show()
+        Log.d("Lifecycle_MSG","onRestart")
+    }
+
+    /*onDestroy*/
+    override fun onDestroy(){
+        super.onDestroy()
+        Log.d("Lifecycle_MSG","onDestroy")
+    }
+
+    /*onSaveInstanceState*/
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d("Lifecycle_MSG","onSaveInstanceState")
+    }
+
+    /*onRestoreInstanceState*/
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.d("Lifecycle_MSG","onRestoreInstanceState")
     }
 }
